@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <header class="header">
+        <h1>🍮 Bienvenida a <span>La Doña de la Esquina</span></h1>
+        <p>Tu tiendita de confianza, siempre cerca de ti ❤️</p>
+    </header>
+
+<section class="menu">
+    <a href="{% url 'lista_productos' %}" class="btn">🛍️ Ver Productos</a>
+    <a href="{% url 'reportes_home' %}" class="btn">📊 Reportes</a>
+    <a href="{% url 'soporte_home' %}" class="btn">💬 Soporte</a>
+</section>
+</div>
+{% endblock %}
+
+{% block extra_css %}
+<style>
+    body {
+        background-color: #fff8fa;
+        font-family: 'Poppins', sans-serif;
+        color: #333;
+        margin: 0;
+        padding: 0;
+    }
+
+    .container {
+        text-align: center;
+        padding: 100px 20px;
+    }
+
+    .header h1 {
+        font-size: 2.5em;
+        color: #c2185b;
+        margin-bottom: 10px;
+    }
+
+    .header h1 span {
+        color: #880e4f;
+    }
+
+    .header p {
+        color: #555;
+        font-size: 1.2em;
+        margin-bottom: 50px;
+    }
+
+    .menu {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .btn {
+        background-color: #c2185b;
+        color: white;
+        text-decoration: none;
+        padding: 15px 30px;
+        border-radius: 12px;
+        font-size: 1.1em;
+        transition: background 0.3s, transform 0.2s;
+    }
+
+    .btn:hover {
+        background-color: #ad1457;
+        transform: scale(1.05);
+    }
+
+    .btn.disabled {
+        background-color: #f8bbd0;
+        cursor: not-allowed;
+    }
+</style>
+{% endblock %}

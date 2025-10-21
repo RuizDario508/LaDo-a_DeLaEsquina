@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>La Doña de la Esquina</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        header.navbar {
+            background-color: #c2185b;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+        }
+
+        header.navbar h2 {
+            margin: 0;
+            font-size: 1.5em;
+        }
+
+        header.navbar a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+    </style>
+
+    {% block extra_css %}{% endblock %}
+</head>
+<body>
+    <header class="navbar">
+        <h2>🍮 La Doña de la Esquina</h2>
+        <nav>
+            <a href="{% url 'home' %}">Inicio</a>
+        </nav>
+    </header>
+
+    {% block content %}{% endblock %}
+</body>
+</html>

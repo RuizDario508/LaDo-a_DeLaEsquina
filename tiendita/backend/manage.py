@@ -1,0 +1,1 @@
+# Django manage file placeholder

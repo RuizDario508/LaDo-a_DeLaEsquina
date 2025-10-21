@@ -1,0 +1,35 @@
+# Entorno virtual
+venv/
+.env
+*.env
+
+# Archivos de configuración local
+*.sqlite3
+*.pyc
+__pycache__/
+db.sqlite3
+
+# Archivos de logs y caché
+*.log
+*.pot
+*.py[cod]
+*.swp
+*.swo
+.cache/
+*.coverage
+
+# Archivos de VS Code
+.vscode/
+
+# Archivos de sistema
+.DS_Store
+Thumbs.db
+
+# Carpeta de migraciones (si querés ignorarlas en desarrollo)
+*/migrations/
+!*/migrations/__init__.py
+
+# Archivos de compilación
+build/
+dist/
+*.egg-info/

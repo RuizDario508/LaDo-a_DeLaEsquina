@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block title %}{{ producto.nombre }} | La Doña de la Esquina{% endblock %}
+{% block content %}
+<div class="container mt-5">
+    <div class="card shadow-sm">
+        {% if producto.imagen %}
+            <img src="{{ producto.imagen.url }}" class="card-img-top" alt="{{ producto.nombre }}">
+        {% endif %}
+        <div class="card-body">
+            <h2 class="card-title">{{ producto.nombre }}</h2>
+            <p class="card-text">{{ producto.descripcion }}</p>
+            <p class="fw-bold text-success">Precio: ${{ producto.precio }}</p>
+            <a href="/productos/" class="btn btn-secondary">← Volver</a>
+        </div>
+    </div>
+</div>
+{% endblock %}
+{% block extra_css %}
+<style>
+    .container {
+        padding: 50px 20px;
+    }
+    h2 {
+        color: #c2185b;
+    }
+</style>
+{% endblock %}
