@@ -3,15 +3,70 @@
 
 {% block title %}Productos | La Doña de la Esquina{% endblock %}
 
+{% block extra_css %}
+<style>
+    body {
+        background-color: #fff5f8;
+        font-family: 'Segoe UI', sans-serif;
+    }
+    .navbar {
+        background-color: #d63384;
+    }
+    .navbar-brand, .nav-link {
+        color: white !important;
+    }
+    h1 {
+        color: #d63384;
+        font-weight: bold;
+    }
+    .search-bar {
+        background-color: #fce4ec;
+        border-radius: 12px;
+        padding: 20px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    .card {
+        border-radius: 16px;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+    }
+    .card-title {
+        color: #d63384;
+        font-weight: 600;
+    }
+    footer {
+        margin-top: 80px;
+        background-color: #f8f9fa;
+        text-align: center;
+        padding: 20px 0;
+        color: #6c757d;
+        font-size: 0.9rem;
+    }
+    .btn-primary, .btn-outline-primary {
+        border-color: #d63384;
+        color: #d63384;
+    }
+    .btn-primary:hover, .btn-outline-primary:hover {
+        background-color: #d63384;
+        color: white;
+    }
+</style>
+{% endblock %}
+
 {% block content %}
-<div class="container mt-4">
-    <h1 class="text-center mb-4">🛍️ Productos disponibles</h1>
+<div class="container my-5">
+    <h1 class="text-center mb-4">🛍️ Nuestros Productos</h1>
 
     <!-- Barra de búsqueda -->
-    <form method="get" class="d-flex justify-content-center mb-4">
-        <input type="text" name="q" class="form-control w-50 me-2" placeholder="Buscar productos..." value="{{ request.GET.q }}">
-        <button type="submit" class="btn btn-primary">Buscar</button>
-    </form>
+    <div class="search-bar mb-4">
+        <form method="get" class="d-flex justify-content-center">
+            <input type="text" name="q" class="form-control w-50 me-2" placeholder="Buscar productos..." value="{{ request.GET.q }}">
+            <button type="submit" class="btn btn-primary">Buscar</button>
+        </form>
+    </div>
 
     <!-- Lista de productos -->
     <div class="row">
@@ -23,7 +78,7 @@
                     {% else %}
                         <img src="{% static 'img/no-image.png' %}" class="card-img-top" alt="Sin imagen">
                     {% endif %}
-                    <div class="card-body">
+                    <div class="card-body text-center">
                         <h5 class="card-title">{{ producto.nombre }}</h5>
                         <p class="card-text text-muted small">{{ producto.descripcion|truncatechars:100 }}</p>
                         <div class="d-flex justify-content-between align-items-center">
@@ -42,17 +97,9 @@
         {% endfor %}
     </div>
 </div>
-{% endblock %}
-{% block extra_css %}
-<style>
-    .container {
-        padding: 50px 20px;
-    }
-    h1 {
-        color: #c2185b;
-    }
-    .card-title {
-        color: #880e4f;
-    }
-</style>
+
+<!-- FOOTER -->
+<footer>
+    &copy; 2025 La Doña de la Esquina. Todos los derechos reservados.
+</footer>
 {% endblock %}
